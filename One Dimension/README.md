@@ -4,6 +4,9 @@ Inspired by Wolfram's Elemntary Cellular Automata (https://mathworld.wolfram.com
 in python that can create all different 256 rules. The program asks the user for the number of the rule and it creates the pattern with initial conditions of one active block in
 the center.
 <br />
+![](https://github.com/sotiriskaragiannis/Cellular-Automata/blob/main/One%20Dimension/wolfram%20images/ElementaryCARules_900.png)
 <br />
 The graphics are created with colorama for background color in windows and linux terminal. By writing space characters and changing the background color
-the black and white blocks are created.
+the black and white blocks are created. For pictures click [here](https://github.com/sotiriskaragiannis/Cellular-Automata/tree/main/One%20Dimension/wolfram%20images)
+<br />
+
