@@ -47,4 +47,29 @@ for i in range(columns):
  
 ![block_size_2](https://user-images.githubusercontent.com/87957685/168443414-a5c31472-66bc-474c-91ac-51478d4e345b.png)
 
+### Changing the number of state using the same rule for the next generations
+You can easily change the number of block states and keep the same algorithm.
+For example these are the modifications of the ([four_state_sum_of_neighborhood_ca.py](four_state_sum_of_neighborhood_ca.py)) that would make it ten state.
+```
+def PrintCells(cells, graph, y):
+    x = 0
+    colors = ['black', 'green',
+          'red', 'blue', 'yellow', 'white', 'purple', 'grey',
+          'orange', 'cyan']
+    for cell in cells:
+        background = colors[cell]   
+        graph.DrawRectangle((x,y), (x+block_size, y+block_size), fill_color=background)
+        x = x + block_size
+```
 
+```
+if i+1 != len(cells):   
+            newcell = (cells[i-1]+cells[i]+cells[i+1]) % 10          # New generation cell is created by the sum of the top 3 blocks.
+        else:                                                       # We use mod 10 to ensure the state is within the range of the 10 states
+            newcell = (cells[i-1]+cells[i]+cells[0]) % 10
+```
+
+#### Results
+
+![ten_state_block_size_5](https://user-images.githubusercontent.com/87957685/168742854-4e83f434-a16e-48e1-8621-da15d271f11f.png)
+![ten_state_block_size_10](https://user-images.githubusercontent.com/87957685/168742871-44ae4903-7903-4e23-92b0-d0de9f3de62d.png)
