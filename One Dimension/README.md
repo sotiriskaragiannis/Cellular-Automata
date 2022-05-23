@@ -1,13 +1,20 @@
 # One-dimensional cellular automata
 ## Simplest cellular automata
-Inspired by Wolfram's Elemntary Cellular Automata (https://mathworld.wolfram.com/ElementaryCellularAutomaton.html), [simplest_ca.py](simplest_ca.py) is a terminal program written
-in python that can create all different 256 rules. The program asks the user for the number of the rule and it creates the pattern with initial conditions of one active block in
+Inspired by Wolfram's Elemntary Cellular Automata (https://mathworld.wolfram.com/ElementaryCellularAutomaton.html), [elementary_ca_image_creation.py](elementary_ca_image_creation.py) is a program written
+in python that can create all different 256 rules. The program asks the user for the number of the rule and it creates an image with the pattern with initial conditions of one active block in
 the center.
 <br />
 ![](https://github.com/sotiriskaragiannis/Cellular-Automata/blob/main/One%20Dimension/wolfram%20images/ElementaryCARules_900.png)
 <br />
-The graphics are created with colorama for background color in windows and linux terminal. By writing space characters and changing the background color
-the black and white blocks are created. For pictures click [here](https://github.com/sotiriskaragiannis/Cellular-Automata/tree/main/One%20Dimension/wolfram%20images)
+The images are created with Pillow with black squares for active cells and white for inactive. For pictures click [here](https://github.com/sotiriskaragiannis/Cellular-Automata/tree/main/One%20Dimension/wolfram%20images)
+
+### Changes
+You can change the image size and the block size in the code. Also you have to fill in the filepath at the end of the script.
+```
+Image_size = (...,...)   # (x,y image size)
+
+block_size = ...  # (in pixels)
+```
 <br />
 
 ## Four State Sum of neighborhood cellular automata
@@ -18,7 +25,7 @@ In the code you can change the size of the window and the block size:
 SIZE_Y = ... 
 SIZE_X = ... 
 
-block_size = ...  #(in pixels)
+block_size = ...  # (in pixels)
 ```
 ### New generations
 The state of each block of the new generation is produced by taking sum of the top three blocks (nearest neighborhood) and calculating the mod 4 to ensure that the new state is within the range of the four states.
